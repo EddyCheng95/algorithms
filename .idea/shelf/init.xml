@@ -1,0 +1,24 @@
+<changelist name="init" date="1559487798794" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/init/shelved.patch" />
+  <option name="DESCRIPTION" value="init" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/chapter1/section1/Average.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/init/Average.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/chapter1/section1/BinarySearch.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/init/BinarySearch.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/chapter1/section1/RandomSeq.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/init/RandomSeq.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/chapter1/section2/Point2DDemo1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/init/Point2DDemo1.class" />
+  </binary>
+</changelist>

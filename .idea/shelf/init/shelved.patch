@@ -1,0 +1,2977 @@
+Index: src/chapter1/section3/Evaluate.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/Evaluate.java	(date 1558706661943)
++++ src/chapter1/section3/Evaluate.java	(date 1558706661943)
+@@ -0,0 +1,58 @@
++package chapter1.section3;
++
++import edu.princeton.cs.algs4.StdIn;
++import edu.princeton.cs.algs4.StdOut;
++
++import java.util.Stack;
++
++public class    Evaluate {
++//    public static void main(String[] args) {
++//        Stack<String> ops = new Stack<>();
++//        Stack<Double> vals = new Stack<>();
++//        while (!StdIn.isEmpty()) {
++//            String s = StdIn.readString();
++//            if (s.equals("("));
++//            else if (s.equals("+")) ops.push(s);
++//            else if (s.equals("-")) ops.push(s);
++//            else if (s.equals("*")) ops.push(s);
++//            else if (s.equals("/")) ops.push(s);
++//            else if (s.equals("sqrt")) ops.push(s);
++//            else if (s.equals(")")) {
++//                String op = ops.pop();
++//                double v = vals.pop();
++//                if (op.equals("+")) v = vals.pop() + v;
++//                if (op.equals("-")) v = vals.pop() - v;
++//                if (op.equals("*")) v = vals.pop() * v;
++//                if (op.equals("/")) v = vals.pop() / v;
++//                if (op.equals("sqrt")) v = Math.sqrt(v);
++//                vals.push(v);
++//            }
++//            else vals.push(Double.parseDouble(s));
++//        }
++//        StdOut.println(vals.pop());
++//    }
++    public static void main(String[] args) {
++        Stack<String> ops = new Stack<>();
++        Stack<Double> vls = new Stack<>();
++        while (!StdIn.isEmpty()) {
++            String s = StdIn.readString();
++            if (s.equals("(")) ;
++            else if (s.equals("+")) ops.push(s);
++            else if (s.equals("-")) ops.push(s);
++            else if (s.equals("*")) ops.push(s);
++            else if (s.equals("/")) ops.push(s);
++            else if (s.equals("sqrt")) ops.push(s);
++            else if (s.equals(")")) {
++                String op = ops.pop();
++                double v = vls.pop();
++                if (op.equals("+")) v = vls.pop() + v;
++                if (op.equals("-")) v = vls.pop() - v;
++                if (op.equals("*")) v = vls.pop() * v;
++                if (op.equals("/")) v = vls.pop() / v;
++                if (op.equals("sqrt")) v = Math.sqrt(v);
++                vls.push(v);
++            } else vls.push(Double.parseDouble(s));
++        }
++        StdOut.println(vls.pop());
++    }
++}
+Index: src/chapter1/section2/Cat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/Cat.java	(date 1557760480954)
++++ src/chapter1/section2/Cat.java	(date 1557760480954)
+@@ -0,0 +1,22 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.In;
++import edu.princeton.cs.algs4.Out;
++
++/**
++ * In和Out的用例示例
++ */
++public class Cat {
++    public static void main(String[] args) {
++        //将所有输入文件复制到输出流（最后一个参数）中
++        String[] arr = {"in1.txt", "in2.txt"};
++        Out out = new Out("out.txt");
++        for (int i = 0; i < arr.length; i++) {
++            In in = new In(arr[i]);
++            String s = in.readAll();
++            out.println(s);
++            in.close();
++        }
++        out.close();
++    }
++}
+Index: src/chapter1/section3/Queue.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/Queue.java	(date 1558788732807)
++++ src/chapter1/section3/Queue.java	(date 1558788732807)
+@@ -0,0 +1,90 @@
++package chapter1.section3;
++
++import java.util.Iterator;
++
++/**
++ * 算法1.3
++ * 链表实现的队列
++ *
++ * impotent
++ * @param <Item>
++ */
++public class Queue<Item> implements Iterable<Item>{
++
++    private Node first;
++    private Node last;
++    private int N;
++    private class Node {
++        Item item;
++        Node next;
++    }
++
++    public boolean isEmpty() {
++        return first == null;
++    }
++
++    public int size() {
++        return N;
++    }
++
++    public void enqueue(Item item) {
++        Node oldlast = last;
++        last = new Node();
++        last.item = item;
++        last.next = null;
++        if(isEmpty()) {
++            first = last;
++        } else {
++            oldlast.next = last;
++        }
++        N++;
++    }
++
++    public Item dequeue() {
++        Item item = first.item;
++        first = first.next;
++        if(isEmpty()) {
++            last = null;
++        }
++        N--;
++        return item;
++    }
++
++    @Override
++    public Iterator<Item> iterator() {
++        return new ListIterator();
++    }
++
++    private class ListIterator implements Iterator<Item> {
++        Node current = first;
++        @Override
++        public boolean hasNext() {
++            return current != null;
++        }
++
++        @Override
++        public Item next() {
++            Item item = current.item;
++            current = current.next;
++            return item;
++        }
++
++        @Override
++        public void remove() {
++
++        }
++    }
++
++    public static void main(String[] args) {
++        Queue<Integer> q = new Queue<>();
++        q.enqueue(11);
++        q.enqueue(12);
++        q.enqueue(13);
++        q.enqueue(14);
++        q.enqueue(15);
++        q.enqueue(16);
++        for (int i : q) {
++            System.out.println(i);
++        }
++    }
++}
+Index: src/chapter1/section1/BinarySearch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/BinarySearch.java	(date 1557582077693)
++++ src/chapter1/section1/BinarySearch.java	(date 1557582077693)
+@@ -0,0 +1,38 @@
++package chapter1.section1;
++
++import java.util.Arrays;
++import java.util.Scanner;
++
++public class BinarySearch {
++    public static int rank(int key, int[] a) {
++        //数组必须是有序的
++        int lo = 0;
++        int hi = a.length-1;
++        while (lo <= hi) {
++            //被查找的键要么不存在，要么必然存在于a[lo...hi]之中
++            int mid = lo + (hi - lo) / 2;
++            if (key < a[mid]) hi = mid - 1;
++            else if (key > a[mid]) lo = mid + 1;
++            else return mid;
++        }
++        return -1;
++    }
++
++    public static void main(String[] args) {
++        Scanner in = new Scanner(System.in);
++        System.out.println("请输入数组长度：");
++        int N = in.nextInt();
++        int[] whitelist = new int[N];
++        for (int i = 0; i < N; i++)
++            whitelist[i] = (int)(Math.random() * 100);
++        int key;
++        Arrays.sort(whitelist);
++        System.out.println("请输入你要查找的数：");
++        while ((key = in.nextInt()) != -1) {
++            if (rank(key, whitelist) < 0)
++                System.out.println(key + "不在白名单");
++            else System.out.println(key + "在白名单");
++
++        }
++    }
++}
+Index: src/chapter1/section1/DrawSortedArray.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/DrawSortedArray.java	(date 1557499780800)
++++ src/chapter1/section1/DrawSortedArray.java	(date 1557499780800)
+@@ -0,0 +1,23 @@
++package chapter1.section1;
++
++import edu.princeton.cs.algs4.StdDraw;
++import edu.princeton.cs.algs4.StdRandom;
++
++import java.util.Arrays;
++
++public class DrawSortedArray {
++    public static void main(String[] args) {
++        int N = 50;
++        double[] a = new double[N];
++        for (int i = 0; i < N; i++)
++            a[i] = StdRandom.random();
++        Arrays.sort(a);
++        for (int i = 0; i < N; i++){
++            double x = 1.0*i/N;
++            double y = a[i]/2.0;
++            double rw = 0.5/N;
++            double rh = a[i]/2.0;
++            StdDraw.filledRectangle(x, y, rw, rh);
++        }
++    }
++}
+Index: src/chapter1/section2/StringDemo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/StringDemo.java	(date 1557675847789)
++++ src/chapter1/section2/StringDemo.java	(date 1557675847789)
+@@ -0,0 +1,43 @@
++package chapter1.section2;
++
++public class StringDemo {
++    /*
++    判断字符串是否是一条回文
++     */
++    public static boolean isPalindrome(String s) {
++        int N = s.length();
++        for (int i = 0; i < N/2; i++)
++            if (s.charAt(i) != s.charAt(N-1-i))
++                return false;
++        return true;
++    }
++
++    /*
++    从一个命令行参数中提取文件名和扩展名
++     */
++    public static String[] fileName(String s) {
++        return s.split("\\.");
++    }
++
++    /*
++    检查一个字符串数组中的元素是否已按照字母表顺序排列
++     */
++    public static boolean isSorted(String[] a) {
++        for (int i = 1; i < a.length; i++) {
++            if (a[i - 1].compareTo(a[i]) > 0)
++                return false;
++        }
++        return true;
++    }
++
++    public static void main(String[] args) {
++        System.out.println(isPalindrome("abba"));
++        String[] x = fileName("data.txt");
++        System.out.println(x[0] + " and " + x[1]);
++        String[] a = {"eddy", "eric", "bob", "abby"};
++        System.out.println(isSorted(a));
++        String[] b = {"abbe", "bob", "crime", "eddy"};
++        System.out.println(isSorted(b));
++
++    }
++}
+Index: src/chapter1/section2/Interval2DTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/Interval2DTest.java	(date 1557673490403)
++++ src/chapter1/section2/Interval2DTest.java	(date 1557673490403)
+@@ -0,0 +1,35 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.*;
++
++import java.util.Scanner;
++
++/**
++ * Interval2D的测试用例
++ */
++public class Interval2DTest {
++    public static void main(String[] args) {
++        Scanner in = new Scanner(System.in);
++        double xlo = in.nextDouble();
++        double xhi = in.nextDouble();
++        double ylo = in.nextDouble();
++        double yhi = in.nextDouble();
++        int T = in.nextInt();
++
++        Interval1D xinterval = new Interval1D(xlo, xhi);
++        Interval1D yinterval = new Interval1D(ylo, yhi);
++        Interval2D box = new Interval2D(xinterval, yinterval);
++        box.draw();
++
++        Counter c = new Counter("hits");
++        for (int t = 0; t < T; t++) {
++            double x = Math.random();
++            double y = Math.random();
++            Point2D p = new Point2D(x, y);
++            if (box.contains(p)) c.increment();
++            else p.draw();
++        }
++        StdOut.println(c);
++        StdOut.println(box.area());
++    }
++}
+Index: src/chapter1/section3/Stack.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/Stack.java	(date 1558788656208)
++++ src/chapter1/section3/Stack.java	(date 1558788656208)
+@@ -0,0 +1,81 @@
++package chapter1.section3;
++
++import java.util.Iterator;
++
++/**
++ * 算法1.2
++ * 下压栈的链表形式实现
++ *
++ * 重要
++ * @param <Item>
++ */
++public class Stack<Item> implements Iterable<Item>{
++
++
++    private Node first;
++    private int N;
++    private class Node{
++        Item item;
++        Node next;
++    }
++
++    public boolean isEmpty() {
++        return first == null;
++    }
++
++    public int size() {
++        return N;
++    }
++
++    public void push(Item item) {
++        Node oldfirst = first;
++        first = new Node();
++        first.item = item;
++        first.next = oldfirst;
++        N++;
++    }
++
++    public Item pop() {
++        Item item = first.item;
++        first = first.next;
++        N--;
++        return item;
++    }
++
++    @Override
++    public Iterator<Item> iterator() {
++        return new ListIterator();
++    }
++
++    private class ListIterator implements Iterator<Item> {
++        private Node current = first;
++        @Override
++        public boolean hasNext() {
++            return current != null;
++        }
++
++        @Override
++        public Item next() {
++            Item item = current.item;
++            current = current.next;
++            return item;
++        }
++    }
++
++    public static void main(String[] args) {
++        Stack<String> s = new Stack<>();
++        s.push("sad");
++        s.push("sad1");
++        s.push("sad2");
++        s.push("sad3");
++        s.push("sad4");
++        s.push("sad5");
++
++        System.out.println(s.pop());
++
++        for (String str : s) {
++            System.out.println(str);
++        }
++
++    }
++}
+Index: src/chapter1/section2/Rolls.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/Rolls.java	(date 1557673490468)
++++ src/chapter1/section2/Rolls.java	(date 1557673490468)
+@@ -0,0 +1,24 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Counter;
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++import java.util.Scanner;
++
++public class Rolls {
++    public static void main(String[] args) {
++        Scanner in = new Scanner(System.in);
++        int T = in.nextInt();
++        int SIDES = 6;
++        Counter[] rolls = new Counter[SIDES+1];
++        for (int i = 1; i <= SIDES; i++)
++            rolls[i] = new Counter(i + "'s");
++        for (int t = 0; t < T; t++){
++            int result = StdRandom.uniform(1, SIDES+1);
++            rolls[result].increment();
++        }
++        for (int i =0; i <= SIDES; i++)
++            StdOut.println(rolls[i]);
++    }
++}
+Index: src/chapter1/section3/Bag.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/Bag.java	(date 1558789812637)
++++ src/chapter1/section3/Bag.java	(date 1558789812637)
+@@ -0,0 +1,59 @@
++package chapter1.section3;
++
++import java.util.Iterator;
++
++/**
++ * 1.4
++ * 背包的实现
++ *
++ * impotent
++ */
++public class Bag<Item> implements Iterable<Item> {
++    private Node first;
++    private int N;
++    private class Node {
++        Item item;
++        Node next;
++    }
++
++    public boolean isEmpty() {
++        return first == null;
++    }
++
++    public int size() {
++        return N;
++    }
++
++    public void add(Item item) {
++        Node oldfirst = first;
++        first = new Node();
++        first.item = item;
++        first.next = oldfirst;
++        N++;
++    }
++
++    public Iterator iterator(){
++        return new ListIterator();
++    }
++
++    private class ListIterator implements Iterator<Item> {
++        private Node current = first;
++
++        @Override
++        public boolean hasNext() {
++            return current != null;
++        }
++
++        @Override
++        public Item next() {
++            Item item = current.item;
++            current = current.next;
++            return item;
++        }
++
++        @Override
++        public void remove() {
++
++        }
++    }
++}
+Index: src/chapter1/section2/FlipsMax.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/FlipsMax.java	(date 1557673490494)
++++ src/chapter1/section2/FlipsMax.java	(date 1557673490494)
+@@ -0,0 +1,28 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Counter;
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++import java.util.Scanner;
++
++public class FlipsMax {
++    public static Counter max(Counter x, Counter y){
++        if (x.tally() > y.tally()) return x;
++        else return y;
++    }
++
++    public static void main(String[] args) {
++        Scanner in = new Scanner(System.in);
++        int T = in.nextInt();
++        Counter heads = new Counter("heads");
++        Counter tails = new Counter("tails");
++        for (int t = 0; t < T; t++)
++            if (StdRandom.bernoulli(0.5))
++                heads.increment();
++            else tails.increment();
++        if (heads.tally() == tails.tally())
++            StdOut.println("Tie");
++        else StdOut.println(max(heads, tails) + " wins");
++    }
++}
+Index: src/chapter1/section2/Flips.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/Flips.java	(date 1557673490528)
++++ src/chapter1/section2/Flips.java	(date 1557673490528)
+@@ -0,0 +1,27 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Counter;
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++import java.util.Scanner;
++
++/**
++ * Counter类的用例，模拟T次掷硬币
++ */
++public class Flips {
++    public static void main(String[] args) {
++        Scanner in = new Scanner(System.in);
++        int T = in.nextInt();
++        Counter heads = new Counter("heads");
++        Counter tails = new Counter("tails");
++        for (int t = 0; t < T; t++)
++            if (StdRandom.bernoulli(0.5))
++                heads.increment();
++            else tails.increment();
++        StdOut.println(heads);
++        StdOut.println(tails);
++        int d = heads.tally() - tails.tally();
++        StdOut.println("delta: " + Math.abs(d));
++    }
++}
+Index: src/chapter1/section1/Practice1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/Practice1.java	(date 1557585553855)
++++ src/chapter1/section1/Practice1.java	(date 1557585553855)
+@@ -0,0 +1,65 @@
++package chapter1.section1;
++
++import java.util.Scanner;
++
++public class Practice1 {
++    public static void main(String[] args) {
++        System.out.println("练习1.1.1：");
++        System.out.println((0 + 15) / 2);//7
++        System.out.println(2.0e-6 * 1000000000.1);//溢出(错误)。2000.0000002
++        System.out.println(true && false || true && true);//true
++        System.out.println("练习1.1.2：");
++        System.out.println((1 + 2.236) / 2);//1.618
++        System.out.println(1 + 2 + 3 + 4.0);//10.0
++        System.out.println(4.1 >= 4);//true
++        System.out.println(1 + 2 + "3");//"33"
++        System.out.println("练习1.1.3：");
++//        equal();
++        System.out.println("练习1.1.4：");
++        int a = 9;
++        int b = 10;
++        int c = 0;
++//      if (a > b) then c = 0;//错误
++//      if a > b { c = 0 };错误
++        if (a > b) c = 0;//正确
++//      if (a > b) c = 0 else b = 0;错误
++        System.out.println("练习1.1.5：");
++//        doubles();
++        System.out.println("练习1.1.6：");
++//        printWhat();
++        System.out.println("练习1.1.8：");
++
++        System.out.println("练习1.1.7：");
++
++
++        System.out.println("练习1.1.8：");
++        System.out.println('b');
++        System.out.println('b' + 'c');
++        System.out.println((char)('a' + 4));//参与运算时先将'a'转换为int值
++    }
++
++     private static void equal(){
++         Scanner in = new Scanner(System.in);
++         int n1 = in.nextInt();
++         int n2 = in.nextInt();
++         int n3 = in.nextInt();
++         System.out.println(n1 == n2? (n2 == n3? "equal" : "not equal") : "out equal");
++     }
++
++     private static void doubles(){
++        Scanner in = new Scanner(System.in);
++        double x = in.nextDouble();
++        double y = in.nextDouble();
++        System.out.println((x < 1 && x > 0) && (y > 0 && y < 1)? "true" : "false");
++     }
++
++     private static void printWhat() {
++        int f = 0;
++        int g = 0;
++        for (int i = 0; i < 15; i++) {
++            System.out.println(f);
++            f = f + g;
++            g = f - g;
++        }
++     }
++}
+Index: src/chapter1/section1/Average.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/Average.java	(date 1557416913174)
++++ src/chapter1/section1/Average.java	(date 1557416913174)
+@@ -0,0 +1,22 @@
++package chapter1.section1;
++
++import edu.princeton.cs.algs4.StdIn;
++import edu.princeton.cs.algs4.StdOut;
++
++/**
++ *
++ */
++public class Average {
++    public static void main(String[] args) {
++        // 取StdIn中所有数的平均数
++        double sum = 0.0;
++        int cnt = 0;
++        while (!StdIn.isEmpty()){
++            //读取一个数并计算累计之和
++            sum += StdIn.readDouble();
++            cnt++;
++        }
++        double avg = sum / cnt;
++        StdOut.printf("Average si %.5f\n", avg);
++    }
++}
+Index: src/chapter1/section1/Test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/Test.java	(date 1557586610527)
++++ src/chapter1/section1/Test.java	(date 1557586610527)
+@@ -0,0 +1,33 @@
++package chapter1.section1;
++
++import edu.princeton.cs.algs4.StdOut;
++
++public class Test {
++    public static void main(String[] args) {
++        System.out.println(Math.abs(-2147483648));
++        System.out.println(Double.POSITIVE_INFINITY);
++        System.out.println(Double.NEGATIVE_INFINITY);
++        System.out.println('b');
++        System.out.println((char)('a' + 4));//参与运算时先将'a'转换为int值
++
++        double t = 9.0;
++        while (Math.abs(t - 9.0/t) > 0.001) {
++            t = (9.0/t + t) / 2.0;
++            StdOut.printf("%.5f\n", t);
++        }
++
++        int sum = 0;
++        for (int i = 1; i < 1000; i++)
++            for (int j = 0; j < i; j++)
++                sum++;
++
++        StdOut.println(sum);
++
++        int sum1 = 0;
++        for (int i = 1; i < 1000; i *= 2)
++            for (int j = 0; j < 1000; j++)
++                sum1++;
++
++        StdOut.println(sum1);
++    }
++}
+Index: src/chapter1/section3/Reverse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/Reverse.java	(date 1558449583714)
++++ src/chapter1/section3/Reverse.java	(date 1558449583714)
+@@ -0,0 +1,17 @@
++package chapter1.section3;
++
++import edu.princeton.cs.algs4.Stack;
++import edu.princeton.cs.algs4.StdIn;
++import edu.princeton.cs.algs4.StdOut;
++
++public class Reverse {
++    public static void main(String[] args) {
++        Stack<Integer> stack;
++        stack = new Stack<Integer>();
++        while (!StdIn.isEmpty())
++            stack.push(StdIn.readInt());
++
++        for (int i : stack)
++            StdOut.println(i);
++    }
++}
+Index: src/chapter1/section3/StackTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/StackTest.java	(date 1558705315568)
++++ src/chapter1/section3/StackTest.java	(date 1558705315568)
+@@ -0,0 +1,18 @@
++package chapter1.section3;
++
++public class StackTest {
++    public static void main(String[] args) {
++        ResizingArrayStack<Integer> rs = new ResizingArrayStack();
++        rs.push(12);
++        rs.push(13);
++        rs.push(14);
++        rs.push(15);
++        rs.push(16);
++        rs.push(17);
++        System.out.println(rs.pop());
++        for (Integer i : rs) {
++            System.out.println(i);
++        }
++
++    }
++}
+Index: src/chapter1/section2/EX06.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/EX06.java	(date 1558366149267)
++++ src/chapter1/section2/EX06.java	(date 1558366149267)
+@@ -0,0 +1,17 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.StdIn;
++
++public class EX06 {
++    public static void main(String[] args) {
++        System.out.println("s: ");
++        String s = StdIn.readLine();
++        System.out.println("t: ");
++        String t = StdIn.readLine();
++        if(s.length()==t.length() && (s + s).indexOf(t) >= 0) {
++            System.out.println(s + " is the circular rotation of " + t);
++        } else {
++            System.out.println(s + " is not the circular rotation of " + t);
++        }
++    }
++}
+Index: src/chapter1/section3/ResizingArrayStack.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/ResizingArrayStack.java	(date 1558705156285)
++++ src/chapter1/section3/ResizingArrayStack.java	(date 1558705156285)
+@@ -0,0 +1,72 @@
++package chapter1.section3;
++
++import java.util.Iterator;
++
++/**
++ * 算法1.1：
++ * 下压（LIFO）栈（能够动态调整数组大小的实现）
++ * 重要
++ */
++public class ResizingArrayStack<Item> implements Iterable<Item> {
++    private Item[] a = (Item[]) new Object[1];
++    private int N = 0;
++
++    public boolean isEmpty() {
++        return N == 0;
++    }
++
++    public int size() {
++        return N;
++    }
++
++    private void resize(int max) {
++        //将栈移动到一个大小为max的新数组
++        Item[] temp = (Item[]) new Object[max];
++        for (int i = 0; i < N; i++) {
++            temp[i] = a[i];
++        }
++        a = temp;
++    }
++
++    public void push(Item item) {
++        //将元素添加到栈顶
++        if (N == a.length) {
++            resize(2*a.length);
++        }
++        a[N++] = item;
++    }
++
++    public Item pop() {
++        //将栈顶元素取出
++        Item item = a[--N];
++        a[N] = null;//避免对象游离
++        if(N > 0 && N==a.length/4){
++            resize(a.length/2);
++        }
++        return item;
++    }
++
++    @Override
++    public Iterator<Item> iterator() {
++        return new ReverseArrayIterator();
++    }
++
++    private class ReverseArrayIterator implements Iterator<Item> {
++        //支持后进先出的迭代
++        int i = N;
++        @Override
++        public boolean hasNext() {
++            return i>0;
++        }
++
++        @Override
++        public Item next() {
++            return a[--i];
++        }
++
++        @Override
++        public void remove() {
++
++        }
++    }
++}
+Index: src/chapter1/section3/EX06.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/EX06.java	(date 1559312188149)
++++ src/chapter1/section3/EX06.java	(date 1559312188149)
+@@ -0,0 +1,28 @@
++package chapter1.section3;
++
++import com.sun.org.apache.xpath.internal.operations.String;
++
++public class EX06 {
++    public static void main(String[] args) {
++        Queue<Integer> q = new Queue<>();
++        Stack<Integer> stack = new Stack<>();
++        for (int i = 0; i < 10; i++) {
++            q.enqueue(i);
++        }
++        for (int i : q) {
++            System.out.print(i);
++        }
++        while(!q.isEmpty()) {
++            stack.push(q.dequeue());
++        }
++        while(!stack.isEmpty()) {
++            q.enqueue(stack.pop());
++        }
++        System.out.println();
++        for (int i : q){
++            System.out.print(i);
++        }
++
++    }
++
++}
+Index: src/chapter1/section4/DoublingRatio.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section4/DoublingRatio.java	(date 1559485476960)
++++ src/chapter1/section4/DoublingRatio.java	(date 1559485476960)
+@@ -0,0 +1,20 @@
++package chapter1.section4;
++
++import edu.princeton.cs.algs4.StdOut;
++
++/**
++ * @author eddy
++ * @date 2019-06-02 22:20
++ */
++public class DoublingRatio {
++
++    public static void main(String[] args) {
++        double prev = DoublingTest.timeTrial(125);
++        for (int N = 250; true; N += N) {
++            double time =DoublingTest.timeTrial(N);
++            StdOut.printf("%7d %5.1f ", N, time);
++            StdOut.printf("%5.1f\n", time/prev);
++            prev = time;
++        }
++    }
++}
+Index: src/chapter1/section3/EX05.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/EX05.java	(date 1558878498801)
++++ src/chapter1/section3/EX05.java	(date 1558878498801)
+@@ -0,0 +1,18 @@
++package chapter1.section3;
++
++/**
++ * 存进N的2进制形式
++ */
++public class EX05 {
++    public static void main(String[] args) {
++        Stack<Integer> stack = new Stack<>();
++        int N = 50;
++        while(N > 0) {
++            stack.push(N%2);
++            N /= 2;
++        }
++        for (int i : stack) {
++            System.out.print(i);
++        }
++    }
++}
+Index: src/chapter1/section4/ThreeSumFast.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section4/ThreeSumFast.java	(date 1559484788359)
++++ src/chapter1/section4/ThreeSumFast.java	(date 1559484788359)
+@@ -0,0 +1,30 @@
++package chapter1.section4;
++
++import edu.princeton.cs.algs4.In;
++import edu.princeton.cs.algs4.StdOut;
++
++/**
++ * @author eddy
++ * @date 2019-06-02 22:12
++ */
++public class ThreeSumFast {
++    public static int count(int[] a) {
++        int N = a.length;
++        int cnt = 0;
++        for (int i = 0; i < N; i++) {
++            for (int j = i + 1; j < N; j++) {
++                for (int k = j + 1; k < N; k++) {
++                    if (a[i] + a[j] + a[k] == 0) {
++                        cnt++;
++                    }
++                }
++            }
++        }
++        return cnt;
++    }
++
++    public static void main(String[] args) {
++        int[] a = In.readInts(args[0]);
++        StdOut.println(count(a));
++    }
++}
+Index: src/chapter1/section3/Parentheses.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/Parentheses.java	(date 1558877816692)
++++ src/chapter1/section3/Parentheses.java	(date 1558877816692)
+@@ -0,0 +1,38 @@
++package chapter1.section3;
++
++import java.util.Scanner;
++
++public class Parentheses {
++    public static void main(String[] args) {
++        Scanner sca = new Scanner(System.in);
++        String s = sca.nextLine();
++        char[] a = s.toCharArray();
++        Stack<Character> sta = new Stack<>();
++        for (char c : a) {
++            if (c=='{' || c=='[' || c=='(') {
++                sta.push(c);
++            } else {
++                if(c=='}') {
++                    if (sta.pop() != '{') {
++                        System.out.println("false!");
++                        return;
++                    }
++                } else if(c==']') {
++                    if (sta.pop() != '[') {
++                        System.out.println("false!");
++                        return;
++                    }
++                } else if(c==')') {
++                    if (sta.pop() != '(') {
++                        System.out.println("false!");
++                        return;
++                    }
++                }
++
++            }
++        }
++
++        System.out.println("true");
++
++    }
++}
+Index: src/chapter1/section4/TwoSumFast.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section4/TwoSumFast.java	(date 1559484788051)
++++ src/chapter1/section4/TwoSumFast.java	(date 1559484788051)
+@@ -0,0 +1,29 @@
++package chapter1.section4;
++
++import chapter1.section1.BinarySearch;
++import edu.princeton.cs.algs4.In;
++import edu.princeton.cs.algs4.StdOut;
++
++import java.util.Arrays;
++
++/**
++ * @author eddy
++ * @date 2019-06-02 22:07
++ */
++public class TwoSumFast {
++    public static int count(int[] a) {
++        Arrays.sort(a);
++        int N = a.length;
++        int cnt = 0;
++        for (int i = 0; i < N; i++) {
++            if (BinarySearch.rank(-a[i], a) > i)
++                cnt++;
++        }
++        return cnt;
++    }
++
++    public static void main(String[] args) {
++        int[] a = In.readInts(args[0]);
++        StdOut.println(count(a));
++    }
++}
+Index: src/chapter1/section4/DoublingTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section4/DoublingTest.java	(date 1559483487585)
++++ src/chapter1/section4/DoublingTest.java	(date 1559483487585)
+@@ -0,0 +1,28 @@
++package chapter1.section4;
++
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++/**
++ * @author eddy
++ * @date 2019-06-02 21:43
++ */
++public class DoublingTest {
++    public static double timeTrial(int N) {
++        int MAX = 1000000;
++        int[] a = new int[N];
++        for (int i = 0; i < N; i++) {
++            a[i] = StdRandom.uniform(-MAX, MAX);
++        }
++        Stopwatch timer = new Stopwatch();
++        int cnt = ThreeSum.count(a);
++        return timer.elapsedTime();
++    }
++
++    public static void main(String[] args) {
++        for (int N = 250; true; N += N) {
++            double time =timeTrial(N);
++            StdOut.printf("%7d %5.1f\n", N, time);
++        }
++    }
++}
+Index: src/chapter1/section4/Stopwatch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section4/Stopwatch.java	(date 1559481415225)
++++ src/chapter1/section4/Stopwatch.java	(date 1559481415225)
+@@ -0,0 +1,31 @@
++package chapter1.section4;
++
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++/**
++ * @author eddy
++ * @date 2019-06-02 21:10
++ */
++public class Stopwatch {
++    private final long start;
++    public Stopwatch() {
++        start = System.currentTimeMillis();
++    }
++    public double elapsedTime() {
++        long now = System.currentTimeMillis();
++        return (now - start) / 1000.0;
++    }
++
++    public static void main(String[] args) {
++        int N = Integer.parseInt(args[0]);
++        int[] a = new int[N];
++        for (int i = 0; i < N; i++) {
++            a[i] = StdRandom.uniform(-1000000, 1000000);
++        }
++        Stopwatch timer = new Stopwatch();
++        int cnt = ThreeSum.count(a);
++        double time = timer.elapsedTime();
++        StdOut.println(cnt + " triples " + time + " seconds");
++    }
++}
+Index: src/chapter1/section4/ThreeSum.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section4/ThreeSum.java	(date 1559485445132)
++++ src/chapter1/section4/ThreeSum.java	(date 1559485445132)
+@@ -0,0 +1,32 @@
++package chapter1.section4;
++
++import chapter1.section1.BinarySearch;
++import edu.princeton.cs.algs4.In;
++import edu.princeton.cs.algs4.StdOut;
++
++import java.util.Arrays;
++
++/**
++ * @author eddy
++ * @date 2019-06-02 20:47
++ */
++public class ThreeSum {
++    public static int count(int[] a) {
++        Arrays.sort(a);
++        int N = a.length;
++        int cnt = 0;
++        for (int i = 0; i < N; i++) {
++            for (int j = i+1; j < N; j++ ) {
++                if (BinarySearch.rank(-a[i]-a[j], a) > j) {
++                    cnt++;
++                }
++            }
++        }
++        return cnt;
++    }
++
++    public static void main(String[] args) {
++        int[] a = In.readInts(args[0]);
++        StdOut.println(count(a));
++    }
++}
+Index: src/chapter1/section1/DrawRandomArray.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/DrawRandomArray.java	(date 1557499427179)
++++ src/chapter1/section1/DrawRandomArray.java	(date 1557499427179)
+@@ -0,0 +1,20 @@
++package chapter1.section1;
++
++import edu.princeton.cs.algs4.StdDraw;
++import edu.princeton.cs.algs4.StdRandom;
++
++public class DrawRandomArray {
++    public static void main(String[] args) {
++        int N = 50;
++        double[] a = new double[N];
++        for (int i = 0; i < N; i++)
++            a[i] = StdRandom.random();
++        for (int i = 0; i < N; i++){
++            double x = 1.0*i/N;
++            double y = a[i]/2.0;
++            double rw = 0.5/N;
++            double rh = a[i]/2.0;
++            StdDraw.filledRectangle(x, y, rw, rh);
++        }
++    }
++}
+Index: src/chapter1/section2/EX03.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/EX03.java	(date 1558365132957)
++++ src/chapter1/section2/EX03.java	(date 1558365132957)
+@@ -0,0 +1,69 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.*;
++
++public class EX03 {
++    public static void main(String[] args) {
++        int N = Integer.parseInt(args[0]);
++        double min = Double.parseDouble(args[1]);
++        double max = Double.parseDouble(args[2]);
++        StdDraw.setXscale(min, max);
++        StdDraw.setYscale(min, max);
++        Point2D[] leftTopPoints = new Point2D[N];
++        Point2D[] rightBottomPoints = new Point2D[N];
++        Interval2D[] intervals = new Interval2D[N];
++        for (int i = 0; i < N; i++) {
++            double a = StdRandom.uniform(min, max);
++            double b = StdRandom.uniform(min, max);
++            double left, right, top, bottom;
++            Interval1D x, y;
++            if(a < b) {
++                left = a;
++                right = b;
++            } else {
++                left = b;
++                right = a;
++            }
++            x = new Interval1D(left, right);
++            a = StdRandom.uniform(min, max);
++            b = StdRandom.uniform(min, max);
++            if(a < b) {
++                top = a;
++                bottom = b;
++            } else {
++                top = b;
++                bottom = a;
++            }
++            y = new Interval1D(top, bottom);
++            leftTopPoints[i] = new Point2D(left, top);
++            rightBottomPoints[i] = new Point2D(right, bottom);
++            intervals[i] = new Interval2D(x, y);
++            intervals[i].draw();
++        }
++        int containNum = 0;
++        int intervalNum = 0;
++        /*for (int i = 0; i < N - 1; i++) {
++            for (int j = i+1; j < N; j++) {
++                if(Intervals[i].intersects(Intervals[j])) {
++                    intervalNum++;
++                }
++                if(Intervals[i].contains(leftTopPoints[j]) && Intervals[i].contains(rightBottomPoints[j])) {
++                    containNum++;
++                }
++            }
++        }*/
++        for (int i = 0; i < N - 1; i++) {
++            for (int j = 0; j < N; j++) {
++                if (j > i && intervals[i].intersects(intervals[j])) {
++                    intervalNum++;
++                }
++                if (j != i && intervals[i].contains(leftTopPoints[j]) && intervals[i].contains(rightBottomPoints[j])) {
++                    containNum++;
++                }
++            }
++        }
++        System.out.println("Interval count: " + intervalNum);
++        System.out.println("Contain count: " + containNum);
++
++    }
++}
+Index: src/chapter1/section1/data.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/data.txt	(date 1557416789559)
++++ src/chapter1/section1/data.txt	(date 1557416789559)
+@@ -0,0 +1,1000 @@
++112.51
++107.84
++167.02
++122.24
++199.65
++154.40
++156.59
++114.20
++131.56
++120.60
++172.73
++140.97
++178.41
++151.82
++192.59
++120.95
++125.93
++196.44
++137.70
++147.38
++134.50
++155.04
++101.51
++195.29
++149.53
++181.52
++168.15
++175.21
++143.64
++193.44
++164.26
++101.54
++170.29
++127.05
++149.85
++148.29
++161.21
++129.17
++119.99
++197.91
++105.46
++111.99
++159.42
++149.86
++106.41
++110.14
++164.25
++144.71
++125.20
++169.39
++121.38
++176.95
++183.69
++165.87
++114.90
++115.04
++118.42
++101.09
++111.09
++120.70
++147.91
++143.53
++158.61
++161.29
++140.21
++190.61
++129.28
++138.67
++145.00
++106.28
++115.89
++116.05
++184.88
++148.87
++198.37
++110.21
++184.67
++141.44
++187.53
++130.84
++153.75
++152.72
++155.95
++190.76
++126.89
++150.43
++170.32
++181.38
++111.92
++160.77
++145.95
++106.33
++188.66
++118.06
++154.96
++192.66
++153.07
++116.59
++132.78
++153.95
++102.86
++183.23
++144.05
++162.55
++116.45
++173.74
++188.89
++199.19
++185.74
++158.32
++153.00
++187.32
++125.25
++102.65
++131.06
++186.86
++194.66
++169.67
++181.88
++117.62
++140.42
++163.97
++105.93
++105.70
++182.77
++116.28
++170.96
++198.51
++149.16
++158.19
++150.08
++173.27
++182.34
++169.06
++177.88
++171.96
++132.11
++186.30
++175.02
++131.98
++173.16
++157.83
++139.35
++145.34
++178.52
++181.29
++152.58
++172.23
++117.91
++118.47
++105.35
++154.52
++143.39
++195.19
++101.05
++123.78
++170.95
++197.33
++158.49
++174.94
++165.88
++151.46
++197.38
++181.22
++192.33
++135.29
++156.70
++159.36
++192.98
++197.46
++165.97
++154.74
++123.43
++178.61
++161.95
++105.55
++177.69
++116.83
++119.33
++162.03
++106.19
++188.97
++142.94
++182.70
++145.78
++186.51
++151.06
++102.50
++152.24
++149.89
++164.74
++169.92
++150.34
++188.07
++106.50
++179.65
++193.81
++191.80
++103.06
++185.29
++158.17
++108.33
++181.52
++162.78
++172.99
++183.02
++146.30
++109.18
++137.24
++188.85
++124.67
++103.96
++150.88
++158.97
++173.08
++130.14
++139.34
++109.08
++143.34
++151.28
++143.46
++186.77
++118.20
++167.01
++196.93
++113.05
++139.04
++124.42
++115.61
++187.66
++164.97
++145.73
++178.64
++114.27
++122.40
++143.55
++190.18
++164.27
++126.66
++134.30
++172.15
++138.54
++183.22
++127.55
++153.42
++105.31
++105.21
++164.54
++188.96
++189.66
++115.85
++102.64
++163.71
++164.61
++139.76
++194.08
++109.97
++147.58
++125.52
++187.32
++195.09
++137.06
++183.23
++187.01
++116.08
++133.80
++165.75
++144.75
++172.23
++178.55
++169.53
++116.97
++172.95
++103.96
++182.46
++118.49
++178.51
++142.25
++159.56
++120.85
++164.07
++152.12
++164.99
++192.72
++143.83
++128.43
++178.68
++156.93
++191.25
++136.68
++129.57
++142.79
++143.86
++170.17
++183.72
++145.77
++186.71
++162.72
++185.47
++167.38
++167.20
++102.15
++122.21
++197.44
++105.84
++180.32
++159.44
++117.97
++132.36
++184.84
++171.95
++153.62
++194.90
++183.88
++178.54
++166.88
++160.88
++181.32
++173.66
++198.06
++152.65
++122.04
++137.07
++179.81
++138.53
++109.01
++194.64
++113.88
++130.14
++153.03
++197.70
++183.81
++121.00
++113.58
++186.30
++191.36
++137.79
++105.20
++102.43
++146.94
++165.91
++137.29
++123.55
++114.54
++153.92
++127.51
++193.57
++110.28
++197.59
++179.02
++138.87
++180.31
++153.76
++139.70
++170.33
++138.65
++136.42
++168.35
++188.83
++128.41
++103.25
++116.94
++131.16
++180.85
++149.32
++100.74
++116.28
++185.95
++186.65
++168.82
++177.55
++155.48
++103.05
++106.37
++195.71
++154.80
++162.11
++197.17
++179.34
++103.39
++126.86
++149.59
++174.96
++195.57
++164.43
++142.85
++127.22
++172.76
++116.28
++181.55
++151.06
++186.55
++198.99
++155.94
++122.62
++127.79
++134.63
++193.01
++143.02
++161.18
++196.20
++149.28
++180.47
++197.07
++193.83
++139.79
++149.67
++152.55
++120.37
++120.13
++145.20
++102.60
++121.21
++138.02
++105.16
++198.46
++152.43
++149.60
++145.35
++135.52
++144.03
++151.50
++170.29
++185.55
++190.28
++114.71
++137.26
++169.52
++148.14
++118.39
++122.34
++136.01
++136.30
++172.84
++113.04
++127.96
++192.68
++189.56
++131.43
++165.40
++165.83
++103.27
++173.52
++145.79
++187.28
++175.86
++136.24
++165.06
++195.98
++115.66
++191.25
++192.09
++163.44
++126.44
++156.97
++187.68
++198.80
++160.20
++114.12
++144.53
++196.76
++185.62
++108.48
++139.53
++127.97
++199.15
++184.98
++131.44
++161.67
++100.38
++101.47
++107.76
++153.20
++124.59
++177.62
++182.86
++125.28
++175.83
++144.58
++176.52
++121.41
++132.18
++174.48
++156.24
++111.90
++100.86
++185.32
++110.15
++188.88
++185.61
++136.48
++128.04
++195.11
++191.34
++152.72
++107.16
++193.47
++131.52
++140.50
++167.18
++198.70
++123.02
++189.58
++153.37
++161.13
++149.72
++184.62
++131.35
++113.46
++151.50
++187.22
++127.85
++165.70
++148.45
++186.82
++152.11
++161.13
++141.40
++160.63
++140.08
++186.33
++139.37
++127.32
++100.02
++162.45
++152.18
++126.86
++101.89
++131.43
++152.16
++110.00
++145.54
++190.71
++152.69
++174.60
++162.70
++123.56
++173.42
++143.39
++156.93
++117.59
++161.86
++137.87
++161.54
++164.13
++119.66
++166.45
++101.09
++182.88
++137.70
++111.53
++174.40
++122.29
++179.17
++169.64
++138.28
++144.71
++161.92
++171.77
++160.41
++116.91
++182.44
++186.71
++126.87
++191.95
++192.43
++189.27
++135.41
++186.05
++186.06
++157.48
++179.06
++125.46
++181.00
++147.94
++126.29
++162.85
++179.68
++187.06
++133.61
++139.67
++178.29
++107.26
++184.82
++102.09
++150.96
++151.96
++136.53
++161.37
++173.60
++170.94
++164.33
++126.53
++168.15
++128.34
++145.87
++127.16
++141.48
++149.93
++187.74
++187.14
++165.16
++142.96
++101.48
++106.30
++192.70
++132.61
++160.66
++156.46
++138.78
++172.07
++125.95
++100.52
++151.48
++199.99
++107.79
++199.08
++192.95
++138.69
++147.45
++177.54
++106.64
++148.98
++136.36
++188.56
++189.75
++183.78
++160.85
++119.82
++108.67
++111.39
++155.04
++164.71
++191.88
++111.42
++167.81
++195.30
++110.07
++181.83
++101.82
++150.65
++106.41
++133.72
++162.05
++181.67
++171.19
++192.10
++159.38
++173.49
++164.62
++165.54
++150.75
++100.84
++179.01
++195.18
++161.53
++158.00
++197.62
++144.70
++128.12
++145.33
++150.79
++146.66
++119.14
++187.30
++192.51
++177.81
++142.12
++103.04
++120.19
++196.38
++119.19
++149.78
++138.94
++137.30
++120.36
++112.27
++127.92
++128.43
++175.28
++116.26
++100.71
++159.94
++146.22
++103.45
++164.32
++112.07
++133.33
++116.69
++172.30
++122.28
++101.21
++109.29
++135.96
++151.74
++160.82
++110.47
++105.00
++193.38
++114.46
++150.00
++153.73
++148.88
++173.17
++169.46
++112.42
++190.27
++185.62
++125.16
++164.54
++113.61
++175.73
++117.90
++190.24
++186.44
++171.86
++169.03
++173.96
++188.89
++124.97
++198.43
++109.79
++148.80
++155.27
++150.71
++132.04
++175.43
++137.23
++158.16
++170.44
++103.58
++131.50
++126.01
++179.59
++169.85
++198.78
++174.17
++120.34
++156.43
++185.70
++172.54
++177.21
++154.29
++155.43
++162.37
++180.49
++117.11
++146.85
++164.69
++164.22
++100.18
++185.50
++139.03
++131.75
++104.35
++136.35
++170.17
++119.96
++174.11
++184.37
++129.01
++149.57
++130.99
++152.00
++174.75
++124.51
++158.73
++114.41
++139.84
++196.36
++195.07
++153.41
++166.73
++141.25
++126.51
++198.51
++145.84
++106.06
++127.01
++139.71
++138.01
++168.44
++129.29
++161.05
++151.45
++120.78
++168.47
++135.71
++183.15
++132.15
++191.50
++144.50
++127.74
++164.29
++183.19
++127.47
++103.17
++117.70
++119.91
++155.48
++141.47
++162.09
++125.14
++113.31
++145.87
++162.03
++167.89
++118.47
++120.65
++142.79
++114.50
++161.31
++138.99
++154.14
++116.93
++141.00
++125.88
++180.69
++196.84
++189.17
++198.13
++115.89
++163.47
++118.59
++121.48
++164.18
++185.73
++107.66
++116.03
++160.49
++123.80
++133.14
++165.72
++199.83
++114.42
++193.53
++164.65
++150.84
++194.98
++123.11
++164.06
++186.83
++146.75
++182.94
++166.97
++105.12
++134.69
++129.18
++154.82
++121.72
++122.86
++101.38
++119.94
++121.71
++147.82
++143.76
++121.11
++117.97
++139.97
++171.18
++175.31
++120.95
++192.82
++117.95
++148.48
++150.33
++193.66
++162.59
++110.04
++125.78
++145.53
++104.49
++172.16
++158.62
++130.08
++179.41
++142.71
++128.60
++183.59
++140.07
++183.21
++170.81
++184.42
++195.17
++177.87
++116.72
++179.06
++195.71
++187.61
++130.05
++106.05
++181.03
++184.74
++153.51
++112.45
++148.58
++137.50
++135.54
++195.76
++191.21
++141.99
++137.59
++145.76
++153.83
++178.69
++131.90
++105.41
++197.06
++105.25
++187.37
++117.59
++119.96
++183.54
++106.85
++175.47
++185.86
++178.96
++123.05
++148.19
++116.20
++163.45
++181.99
++110.77
++165.21
++199.20
++143.58
++167.29
++165.51
++180.00
++106.37
++119.91
++139.13
++159.18
++120.61
++102.65
++101.51
++198.88
++187.70
++168.65
++146.91
++133.98
++156.89
++192.17
++193.17
++155.87
++120.96
++122.72
++180.58
++186.22
++181.19
++107.50
++165.46
++128.87
++199.05
++180.50
++122.23
++159.28
++177.21
++102.06
++169.70
++135.21
++115.43
++120.76
++166.94
++189.73
++168.61
++121.24
++181.96
++198.33
++193.37
++116.11
++122.63
++195.53
++107.46
++137.81
++133.24
++153.02
++101.70
++187.32
++102.57
++121.81
++138.39
++100.35
++199.62
++183.27
++141.66
++199.11
++151.70
++150.70
++135.70
++107.66
++106.30
++112.03
++114.80
++122.60
++172.86
++106.92
++135.64
++146.91
++123.65
+Index: src/chapter1/section3/FixedCapacityStack.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/FixedCapacityStack.java	(date 1558539185389)
++++ src/chapter1/section3/FixedCapacityStack.java	(date 1558539185389)
+@@ -0,0 +1,101 @@
++package chapter1.section3;
++
++import edu.princeton.cs.algs4.StdIn;
++import edu.princeton.cs.algs4.StdOut;
++
++import java.util.Iterator;
++
++public class FixedCapacityStack<Item> implements Iterable<Item>{
++//    private Item[] a;
++//    private int N;
++//    public FixedCapacityStack(int cap) {
++//        a = (Item[]) new Object[cap];
++//    }
++//    public boolean isEmpty() {
++//        return N==0;
++//    }
++//    public int size() {
++//        return N;
++//    }
++//    public void push(Item item) {
++//        a[N++] = item;
++//    }
++//    public Item pop() {
++//        return a[--N];
++//    }
++    private Item[] a;
++    private int N;
++    public FixedCapacityStack(int cap) {
++        a = (Item[]) new Object[cap];
++    }
++
++    public boolean isEmpty() {
++        return N==0;
++    }
++
++    public int size() {
++        return N;
++    }
++
++    public void resize(int max) {
++        Item[] temp = (Item[]) new Object[max];
++        for (int i = 0; i < N; i++) {
++            temp[i] = a[i];
++        }
++        a = temp;
++    }
++
++    public void push(Item item) {
++        if(N == a.length) {
++            resize(a.length * 2);
++        }
++        a[N++] = item;
++    }
++
++    public Item pop() {
++        Item item = a[--N];
++        a[N] = null;
++        if(N > 0 && N==a.length/4) {
++            resize(a.length/2);
++        }
++        return item;
++    }
++
++    private class ReverseArrayIterator implements Iterator<Item> {
++        private  int i = N;
++        @Override
++        public boolean hasNext() {
++            return i > 0;
++        }
++
++        @Override
++        public Item next() {
++            return a[--i];
++        }
++
++        @Override
++        public void remove() {
++
++        }
++    }
++
++    @Override
++    public Iterator<Item> iterator() {
++        return new ReverseArrayIterator();
++    }
++
++    public static void main(String[] args) {
++        FixedCapacityStack<String> s;
++        s = new FixedCapacityStack<>(100);
++        while (!StdIn.isEmpty()) {
++            String item = StdIn.readString();
++            if (!item.equals("-")) {
++                s.push(item);
++            } else if (!s.isEmpty()) {
++                StdOut.print(s.pop() + " ");
++            }
++        }
++        StdOut.println("(" + s.size() + " left on stack");
++    }
++
++}
+Index: src/chapter1/section3/FixedCapacityStackOfString.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/FixedCapacityStackOfString.java	(date 1558791722014)
++++ src/chapter1/section3/FixedCapacityStackOfString.java	(date 1558791722014)
+@@ -0,0 +1,65 @@
++package chapter1.section3;
++
++import edu.princeton.cs.algs4.StdIn;
++import edu.princeton.cs.algs4.StdOut;
++
++public class FixedCapacityStackOfString {
++//    private String[] a;
++//    private int N;
++//    public FixedCapacityStackOfString (int cap) {
++//        a = new String[cap];
++//    }
++//
++//    public boolean isEmpty() {
++//        return N==0;
++//    }
++//
++//    public int size() {
++//        return N;
++//    }
++//
++//    public void push(String item) {
++//        a[N++] = item;
++//    }
++//
++//    public String pop() {
++//        return a[--N];
++//    }
++
++    private String[] a;
++    private int N;
++    public FixedCapacityStackOfString(int caps) {
++        a = new String[caps];
++    }
++
++    public boolean isEmpty() {
++        return N==0;
++    }
++
++    public int size() {
++        return N;
++    }
++
++    public void push(String item) {
++        a[N++] = item;
++    }
++
++    public String pop() {
++        return a[--N];
++    }
++
++    public boolean isFull() {
++        return N == a.length;
++    }
++
++    public static void main(String[] args) {
++        FixedCapacityStackOfString s = new FixedCapacityStackOfString(100);
++        while (!StdIn.isEmpty()) {
++            String item = StdIn.readString();
++            if (!item.equals("-"))
++                s.push(item);
++            else if (!s.isEmpty()) StdOut.print(s.pop() + " ");
++        }
++        StdOut.println("(" + s.size() + " left on stack)");
++    }
++}
+Index: src/chapter1/section2/EX02.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/EX02.java	(date 1558279302396)
++++ src/chapter1/section2/EX02.java	(date 1558279302396)
+@@ -0,0 +1,23 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Interval1D;
++import edu.princeton.cs.algs4.StdIn;
++
++public class EX02 {
++    public static void main(String[] args) {
++        int N = Integer.parseInt(args[0]);
++        Interval1D[] intervals = new Interval1D[N];
++        for (int i = 0; i < N; i++) {
++            intervals[i] = new Interval1D(StdIn.readDouble(), StdIn.readDouble());
++        }
++        if(N > 1) {
++            for (int i = 0; i < N-1; i++) {
++                for (int j = i+1; j < N; j++) {
++                    if (intervals[i].intersects(intervals[j])) {
++                        System.out.println(intervals[i] + ":" + intervals[j]);
++                    }
++                }
++            }
++        }
++    }
++}
+Index: src/chapter1/section2/EX01.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/EX01.java	(date 1558278223532)
++++ src/chapter1/section2/EX01.java	(date 1558278223532)
+@@ -0,0 +1,44 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Point2D;
++
++public class EX01 {
++    public static void main(String[] args) {
++//        int N = Integer.parseInt(args[0]);
++//        Point2D[] points = new Point2D[N];
++//        for (int i = 0; i < N; i++) {
++//            points[i] = new Point2D(Math.random(),Math.random());
++//            points[i].draw();
++//        }
++//        if(N > 1) {
++//            double min = points[0].distanceTo(points[1]);
++//            for (int i = 0; i < N-1; i++) {
++//                for (int j = i + 1; j < N; j++) {
++//                    if(points[i].distanceTo(points[j]) < min) {
++//                        min = points[i].distanceTo(points[j]);
++//                    }
++//                }
++//            }
++//            System.out.println("Min distance: " + min);
++//        }
++
++        int N = Integer.parseInt(args[0]);
++        Point2D[] points = new Point2D[N];
++        for (int i = 0; i < N; i++) {
++            points[i] = new Point2D(Math.random(), Math.random());
++            points[i].draw();
++        }
++        if (N > 1) {
++            double min = points[0].distanceTo(points[1]);
++            for (int i = 0; i < N-1; i++) {
++                for (int j = i+1; j < N; j++) {
++                    if(points[i].distanceTo(points[j]) < min) {
++                        min = points[i].distanceTo(points[j]);
++                    }
++                }
++            }
++            System.out.println("Min distance: " + min);
++        }
++    }
++
++}
+Index: src/chapter1/section1/FunctionDraw.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/FunctionDraw.java	(date 1557498460764)
++++ src/chapter1/section1/FunctionDraw.java	(date 1557498460764)
+@@ -0,0 +1,17 @@
++package chapter1.section1;
++
++import edu.princeton.cs.algs4.StdDraw;
++
++public class FunctionDraw {
++    public static void main(String[] args) {
++        int N = 100;
++        StdDraw.setXscale(0, N);
++        StdDraw.setYscale(0, N*N);
++        StdDraw.setPenRadius(.01);
++        for (int i = 1;i <=N; i++){
++            StdDraw.point(i, i);
++            StdDraw.point(i, i*i);
++            StdDraw.point(i, i*Math.log(i));
++        }
++    }
++}
+Index: src/chapter1/section2/Date.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/Date.java	(date 1558271597743)
++++ src/chapter1/section2/Date.java	(date 1558271597743)
+@@ -0,0 +1,43 @@
++package chapter1.section2;
++
++public class Date {
++    private final int month;
++    private final int day;
++    private final int year;
++
++    public Date(int m, int d, int y) {
++        this.month = m;
++        this.day = d;
++        this.year = y;
++    }
++
++    public int month() {
++        return month;
++    }
++
++    public int day() {
++        return day;
++    }
++
++    public  int year() {
++        return year;
++    }
++
++    @Override
++    public String toString() {
++        return month() + "/" + day() + "/" + year();
++    }
++
++
++    @Override
++    public boolean equals(Object x) {
++        if (this == x) return true;
++        if (x == null) return false;
++        if (this.getClass() != x.getClass()) return false;
++        Date that = (Date) x;
++        if (this.day != that.day) return false;
++        if (this.month != that.month) return false;
++        if (this.year != that.year) return false;
++        return true;
++    }
++}
+Index: src/chapter1/section2/VisualAccumulator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/VisualAccumulator.java	(date 1558020328728)
++++ src/chapter1/section2/VisualAccumulator.java	(date 1558020328728)
+@@ -0,0 +1,33 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Accumulator;
++import edu.princeton.cs.algs4.StdDraw;
++
++public class VisualAccumulator extends Accumulator {
++    private double total;
++    private int N;
++    public VisualAccumulator(int trials, double max) {
++        StdDraw.setXscale(0, trials);
++        StdDraw.setYscale(0, max);
++        StdDraw.setPenRadius(0.005);
++    }
++
++    public void addDataValue(double val) {
++        N++;
++        total += val;
++        StdDraw.setPenColor(StdDraw.DARK_GRAY);
++        StdDraw.point(N, val);
++        StdDraw.setPenColor(StdDraw.RED);
++        StdDraw.point(N, total/N);
++    }
++
++    @Override
++    public double mean() {
++        return super.mean();
++    }
++
++    @Override
++    public String toString() {
++        return super.toString();
++    }
++}
+Index: src/chapter1/section2/TestVisualAccumulator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/TestVisualAccumulator.java	(date 1558020240531)
++++ src/chapter1/section2/TestVisualAccumulator.java	(date 1558020240531)
+@@ -0,0 +1,14 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++public class TestVisualAccumulator {
++    public static void main(String[] args) {
++        int T = Integer.parseInt(args[0]);
++        VisualAccumulator a = new VisualAccumulator(T, 1.0);
++        for (int t = 0; t < T; t++)
++            a.addDataValue(StdRandom.random());
++        StdOut.println(a.mean());
++    }
++}
+Index: src/chapter1/section1/RandomSeq.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section1/RandomSeq.java	(date 1557416923429)
++++ src/chapter1/section1/RandomSeq.java	(date 1557416923429)
+@@ -0,0 +1,18 @@
++package chapter1.section1;
++
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++public class RandomSeq {
++    public static void main(String[] args) {
++        //打印N个（lo,hi）之间的随机值
++        int N = Integer.parseInt(args[0]);
++        double lo = Double.parseDouble(args[1]);
++        double hi = Double.parseDouble(args[2]);
++        for (int i = 0; i < N; i++){
++            double x = StdRandom.uniform(lo, hi);
++            StdOut.printf("%.2f\n",x);
++        }
++
++    }
++}
+Index: src/chapter1/section2/TestAccumulator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/TestAccumulator.java	(date 1558017884437)
++++ src/chapter1/section2/TestAccumulator.java	(date 1558017884437)
+@@ -0,0 +1,15 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Accumulator;
++import edu.princeton.cs.algs4.StdOut;
++import edu.princeton.cs.algs4.StdRandom;
++
++public class TestAccumulator {
++    public static void main(String[] args) {
++        int T = Integer.parseInt(args[0]);
++        Accumulator a = new Accumulator();
++        for (int t = 0; t < T; t++)
++            a.addDataValue(StdRandom.random());
++        StdOut.println(a);
++    }
++}
+Index: src/chapter1/section2/Whitelist.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/Whitelist.java	(date 1558109360111)
++++ src/chapter1/section2/Whitelist.java	(date 1558109360111)
+@@ -0,0 +1,18 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.In;
++import edu.princeton.cs.algs4.StaticSETofInts;
++import edu.princeton.cs.algs4.StdIn;
++import edu.princeton.cs.algs4.StdOut;
++
++public class Whitelist {
++    public static void main(String[] args) {
++        int[] w = In.readInts(args[0]);
++        StaticSETofInts set = new StaticSETofInts(w);
++        while (!StdIn.isEmpty()) {
++            int key = StdIn.readInt();
++            if (!set.contains(key))
++                StdOut.println(key);
++        }
++    }
++}
+Index: src/chapter1/section2/DateTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section2/DateTest.java	(date 1558016393257)
++++ src/chapter1/section2/DateTest.java	(date 1558016393257)
+@@ -0,0 +1,14 @@
++package chapter1.section2;
++
++import edu.princeton.cs.algs4.Date;
++import edu.princeton.cs.algs4.StdOut;
++
++public class DateTest {
++    public static void main(String[] args) {
++        int m = Integer.parseInt(args[0]);
++        int d = Integer.parseInt(args[1]);
++        int y = Integer.parseInt(args[2]);
++        Date date = new Date(m, d, y);
++        StdOut.println(date);
++    }
++}
+Index: src/chapter1/section3/test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/test.java	(date 1558707697551)
++++ src/chapter1/section3/test.java	(date 1558707697551)
+@@ -0,0 +1,28 @@
++package chapter1.section3;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class test {
++
++        public static boolean isHappy(int n) {
++            List<Integer> l = new ArrayList();
++            while(n>0){
++                l.add(n%10);
++                n = n/10;
++            }
++            int num = 0;
++            for(int x : l){
++                num += x*x;
++            }
++            if (num==1)
++                return true;
++            else return isHappy(num);
++        }
++
++
++    public static void main(String[] args) {
++        boolean a = isHappy(19);
++        System.out.println(a);
++    }
++}
+Index: src/chapter1/section3/data.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/data.txt	(date 1557845911857)
++++ src/chapter1/section3/data.txt	(date 1557845911857)
+@@ -0,0 +1,1 @@
++12 56 23 87 23
+\ No newline at end of file
+Index: src/chapter1/section3/CreateArray.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/CreateArray.java	(date 1557846126212)
++++ src/chapter1/section3/CreateArray.java	(date 1557846126212)
+@@ -0,0 +1,24 @@
++package chapter1.section3;
++
++import edu.princeton.cs.algs4.In;
++import edu.princeton.cs.algs4.Queue;
++
++public class CreateArray {
++    public static int[] readInts(String name) {
++        In in = new In(name);
++        Queue<Integer> q = new Queue<Integer>();
++        while (!in.isEmpty())
++            q.enqueue(in.readInt());
++
++        int N = q.size();
++        int[] a = new int[N];
++        for (int i = 0; i < N; i++)
++            a[i] = q.dequeue();
++        return a;
++    }
++
++    public static void main(String[] args) {
++        int[] arr = readInts("data.txt");
++
++    }
++}
+Index: src/chapter1/section3/Stats.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/chapter1/section3/Stats.java	(date 1557845074139)
++++ src/chapter1/section3/Stats.java	(date 1557845074139)
+@@ -0,0 +1,27 @@
++package chapter1.section3;
++
++import edu.princeton.cs.algs4.Bag;
++import edu.princeton.cs.algs4.StdIn;
++import edu.princeton.cs.algs4.StdOut;
++
++public class Stats {
++    public static void main(String[] args) {
++        Bag<Double> numbers = new Bag<Double>();
++        while (!StdIn.isEmpty())
++            numbers.add(StdIn.readDouble());
++        int N = numbers.size();
++
++        double sum = 0.0;
++        for (double x : numbers)
++            sum += x;
++        double mean = sum/N;
++
++        sum = 0.0;
++        for (double x : numbers)
++            sum += (x - mean)*(x - mean);
++        double std = Math.sqrt(sum/(N-1));
++
++        StdOut.printf("MeanL: %.2f\n", mean);
++        StdOut.printf("Std dev: %.2f\n", std);
++    }
++}
