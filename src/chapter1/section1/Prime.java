@@ -1,4 +1,7 @@
 package chapter1.section1;
+
+import java.util.Scanner;
+
 /**
  * 判断是否为素数的一种方法
  * @author CY
@@ -14,7 +17,10 @@ public class Prime {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(isPrime(56));
+		Scanner in = new Scanner(System.in);
+		System.out.println("请输入要判断的数： ");
+		int N = in.nextInt();
+		System.out.println(isPrime(N));
 
 	}
 

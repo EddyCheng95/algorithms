@@ -8,7 +8,8 @@ public class Test {
         System.out.println(Double.POSITIVE_INFINITY);
         System.out.println(Double.NEGATIVE_INFINITY);
         System.out.println('b');
-        System.out.println((char)('a' + 4));//参与运算时先将'a'转换为int值
+        System.out.println((char)('a' + 4));
+        //参与运算时先将'a'转换为int值
 
         double t = 9.0;
         while (Math.abs(t - 9.0/t) > 0.001) {

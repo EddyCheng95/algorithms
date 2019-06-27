@@ -14,7 +14,7 @@ public class Determinant {
 		if(a.length == 1) return a[a.length-1][a.length-1];
 		
 		//list用来存储余子式
-		List<int[][]> list = new ArrayList<int[][]>();
+		List<int[][]> list = new ArrayList<>();
 		
 		/*
 		 * 找出第一行元素的代数余子式
