@@ -6,6 +6,8 @@ import edu.princeton.cs.algs4.StdOut;
 /**
  * @author eddy
  * @date 2019-06-07 19:06
+ *
+ * 插入排序，时间复杂度为
  */
 public class Insertion  {
     public static void sort(Comparable[] a){

@@ -1,100 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc7714be-96d7-4d80-b5d0-05d276c027e2" name="Default Changelist" comment="..">
+    <list default="true" id="fc7714be-96d7-4d80-b5d0-05d276c027e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Average.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/BinarySearch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/BinarySearch1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Determinant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/DrawRandomArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/DrawSortedArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/FunctionDraw.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Gcd.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Matrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Practice1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Prime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/RandomSeq.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Sqrt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Cat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Date.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/DateTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX06.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Flips.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/FlipsMax.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Interval2DTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Rolls.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/StringDemo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/TestAccumulator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/TestVisualAccumulator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/VisualAccumulator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Whitelist.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag$ListIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag$Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/CreateArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/EX05.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/EX06.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Evaluate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStack$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStack$ReverseArrayIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStack.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStackOfString.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Parentheses.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue$ListIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue$Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/ResizingArrayStack$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/ResizingArrayStack$ReverseArrayIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/ResizingArrayStack.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Reverse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack$ListIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack$Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/StackTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stats.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/DoublingRatio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/DoublingTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/Stopwatch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/ThreeSum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/ThreeSumFast.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/TwoSumFast.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section5/QuickUnionUF.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section5/UF.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter1/section5/WeightedQuickUnionUF.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Date.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Example.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Insertion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Selection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Shell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/SortCompare.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/SortTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/SortTestEach.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/YangHuiTriangle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section2/Merge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section2/MergeBU.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section3/Quick.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/algorithms/chapter2/section3/Quick3way.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/algorithms.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Average.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/BinarySearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/BinarySearch1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Determinant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/DrawRandomArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/DrawSortedArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/FunctionDraw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Gcd.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Matrix.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Practice1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Prime.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/RandomSeq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Sqrt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section1/data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Cat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Date.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/DateTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX01.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX02.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX03.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/EX06.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Flips.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/FlipsMax.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Interval2DTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Rolls.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/StringDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/TestAccumulator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/TestVisualAccumulator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/VisualAccumulator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section2/Whitelist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag$ListIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Bag.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/CreateArray.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/EX05.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/EX06.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Evaluate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStack$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStack$ReverseArrayIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/FixedCapacityStackOfString.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Parentheses.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue$ListIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Queue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/ResizingArrayStack$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/ResizingArrayStack$ReverseArrayIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/ResizingArrayStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Reverse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack$ListIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/StackTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/Stats.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section3/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/DoublingRatio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/DoublingTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/Stopwatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/ThreeSum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/ThreeSumFast.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section4/TwoSumFast.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section5/QuickUnionUF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section5/UF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter1/section5/WeightedQuickUnionUF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Date.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Example.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Insertion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Selection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/Shell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/SortCompare.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/SortTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/SortTestEach.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section1/YangHuiTriangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section2/Merge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section2/MergeBU.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section3/Quick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/algorithms/chapter2/section3/Quick3way.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/Average.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/BinarySearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter1/section1/BinarySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/BinarySearch1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter1/section1/BinarySearch1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/Determinant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter1/section1/Determinant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/Gcd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter1/section1/Gcd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/Prime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter1/section1/Prime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/RandomSeq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section1/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter1/section1/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chapter1/section2/Point2DDemo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapter2/section1/Insertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter2/section1/Insertion.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="algorithms.iml" />
@@ -132,7 +124,20 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chapter2/section1/Insertion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -199,7 +204,6 @@
         <option value="$PROJECT_DIR$/src/chapter2/section1/MergeBU.java" />
         <option value="$PROJECT_DIR$/src/chapter2/section1/Example.java" />
         <option value="$PROJECT_DIR$/src/chapter2/section1/Selection.java" />
-        <option value="$PROJECT_DIR$/src/chapter2/section1/Insertion.java" />
         <option value="$PROJECT_DIR$/src/chapter2/section2/Merge.java" />
         <option value="$PROJECT_DIR$/src/chapter2/section2/MergeBU.java" />
         <option value="$PROJECT_DIR$/src/chapter2/section3/Quick.java" />
@@ -215,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/chapter1/section1/Prime.java" />
         <option value="$PROJECT_DIR$/src/chapter1/section1/Test.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/chapter2/section1/Insertion.java" />
       </list>
     </option>
   </component>
@@ -252,6 +257,24 @@
             <path>
               <item name="algorithms" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algorithms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algorithms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algorithms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter2" type="462c0819:PsiDirectoryNode" />
+              <item name="section1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -430,7 +453,7 @@
       <workItem from="1560690140288" duration="3822000" />
       <workItem from="1560867315015" duration="2531000" />
       <workItem from="1561294333540" duration="3492000" />
-      <workItem from="1561643871730" duration="5253000" />
+      <workItem from="1561643871730" duration="5825000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1557327653104</created>
@@ -467,11 +490,32 @@
       <option name="project" value="LOCAL" />
       <updated>1561296471184</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="..">
+      <created>1561649187440</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561649187440</updated>
+    </task>
+    <task id="LOCAL-00007" summary="..">
+      <created>1561649308132</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561649308132</updated>
+    </task>
+    <task id="LOCAL-00008" summary="..">
+      <created>1561649322131</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1561649322131</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193451000" />
+    <option name="totallyTimeSpent" value="194023000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -484,6 +528,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16554959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -494,7 +539,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32844576" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" visible="true" weight="0.2170088" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731904" visible="true" weight="0.2170088" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398827" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -503,7 +548,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49865952" weight="0.1260997" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.2591508" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013405" side_tool="true" weight="0.2829912" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50268096" side_tool="true" visible="true" weight="0.2170088" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49932975" weight="0.23167156" />
       <window_info anchor="bottom" id="Problems" order="13" weight="0.32991204" />
       <window_info anchor="bottom" id="Duplicates" order="14" weight="0.329429" />
@@ -561,35 +606,14 @@
     <MESSAGE value="init" />
     <MESSAGE value="《算法》第四版学习" />
     <MESSAGE value="chapter1第一次push到GitHub上不完整，现将缺失内容重新push" />
-    <option name="LAST_COMMIT_MESSAGE" value="chapter1第一次push到GitHub上不完整，现将缺失内容重新push" />
+    <MESSAGE value=".." />
+    <option name="LAST_COMMIT_MESSAGE" value=".." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/chapter2/section3/Quick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="13" selection-start-line="13" selection-end-line="81" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chapter2/section2/MergeBU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chapter2/section1/Insertion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -953,13 +977,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/README_my.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="209">
             <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__.patch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chapter2/section1/Insertion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
